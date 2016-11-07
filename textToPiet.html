@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--Helen Wallace 2016-->
+<title>Piet Generator</title>
+<script src="pnglib.js"></script>
+<script src="pietApp.js"></script>
+<head>
+<body>
+<form id="myForm">
+	<p>This page generates a piet program which will output whatever text you enter repeatedly.<br> 
+	Pointless but pretty; I know.<br>If you want to make a new image hit refresh, to check the piet you can use 
+	<br>
+		<a href="http://www.rapapaing.com/blog/?page_id=6">This Online Verifier/Dev</a> (the Codel width is 10).<br>
+		Also more information on Piet 
+		<a href="http://www.dangermouse.net/esoteric/piet.html">here</a>.<br><br>
+  Text: <input type="text" id="outputText"><br>
+  
+  <input type="button" onclick="createImage()" value="Create Image">
+</form>
+<p id="image"></p>
+<p>This is an entirely JS application feel free to look at the source code. Png editing thanks to <a href="http://www.xarg.org/2010/03/generate-client-side-png-files-using-javascript/">Robert Eisele</a></p>
+
+<p> Heres an example</p>
+<img src="gifLink.png" alt="Example Program">
+
+<p>Theres a few improvements to do on this; make the programs terminate, let users select start colour... I might get round to that someday.</p>
+
+</body>
+</html>

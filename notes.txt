@@ -1,0 +1,63 @@
+Colour mapping
+0=lightRed,	1=Red.	 2=darkRed
+ 3=lightYellow,	4=Yellow,	5=darkYellow
+6=lightGreen,	7=Green.	8=darkGreen
+9=lightCyan,	10=Cyan,	11=darkCyan
+12=lightBlue,	13=Blue.	14=darkBlue
+15=lightMagenta,	16=Magenta,	17=darkMagenta
+19=white, 20=black
+
+darkness = colour%3
+hue = colour/3
+Op Mappings
+1=push
+2=pop
+3=add
+4=sub
+5=mul
+6=div
+10=pointer
+12=dup
+17=outChar
+
+op%3 = darkness change
+op/3=hue change
+
+Square Calcs
+A= l^2
+uasable op pixels = A -( center + corners)
+n corners = sqrt(2l^2)
+	=srt(2)*l
+00X00
+0XAX0
+XAAAX
+0XSX0
+Area of end = 4*5 = 20
+usable = 2
+diff = 18
+
+5*5 = 3 ops sans corners
+7*7 = 19 = 3 + 16 = 3 + 4(4) = 3 + 4(7-3)
+9*9 = 43 = 24 + 19 = 19 + 4*6 = 19 +4(9-3)
+11*11 = 43 + = 43 + 4*8 = 43 + 4(11-3)
+ops in x*x square 
+where x is odd >= 5
+opsin(x){
+if x==5 return 3
+else
+return (opsin(x-2) + 4(x-3))
+}
+
+reverse index of corners
+5*5 5ops total
+-3
+7*7 (19 + 8 + 2 = 29)
+-6   = prev+1
+-11  = 6 + 5 = 6 + (7-2)
+-17  = 11 + 6 = 11 + (7-1)
+-23  = 17 + 6 = 17 + (7-1)
+9*9
+-30 = 29 + 1 = prev +1 
+-37 = 30 + 7 = 30 + (9-2)
+-45 = 37 + 8 = 37 + (9-1)
+-53 = 

@@ -1,0 +1,81 @@
+ASCII = 0-255
+actual 32 to 122 (90 numbers)
+36, 72, 108, 144
+(36*n + y)
+space= 32
+@=64
+A-Z 65-90
+a-z 97-122
+1,2,4,16,256
+	//4x2     8, 64
+	//16x2	  32, 
+	//64x2	  124
+	//1,3,9,81
+	//3x2 6, 36, 
+ops	1	2		3 		4		5		6		7		8	 	9 		10		11	
+1	push
+	1
+	[1]
+2	pu	dup		add
+	1	1,1,	2
+	[1,12,3]
+3	pu	dup		add		push	add
+	1	1,1,	2		1,2,	3
+	[1,12,3,1,3]
+4   pu	dup		add		dup		add
+	1	1,1,	2		2,2,	4
+	[1,12,3,12,3]
+5	pu	dup		add		dup		add		pu		add
+	1	1,1,	2		2,2,	4		4,1		5
+	[1,12,3,12,3,1,3]
+6	pu	dup		add		dup		dup 	add		add
+	1	1,1,	2		2,2,	2,2,2,	4,2,	6
+	[1,12,3,12,12,3,3]
+7	pu	dup		add		dup		dup 	add		add		pu		add
+	1	1,1,	2		2,2,	2,2,2,	4,2,	6		1,6,	7
+	[1,12,3,12,12,3,3,1,3]
+8	pu	dup		add		dup		add		dup		add
+	1	1,1,	2		2,2,	4		4,4,	8
+	[1,12,3,12,3,12,3]
+9   pu	dup		add		push	add		dup		mul
+	1	1,1,	2		1,2,	3		3,3,	9
+	[1,12,3,1,3,12,5]
+10	pu	dup		add		dup		add		pu		add		dup		add
+	1	1,1,	2		2,2,	4		4,1		5		5,5		10
+	[1,12,3,12,3,1,3,12,3]
+11	pu	dup		add		dup		add		pu		add		dup		add		push		add
+	1	1,1,	2		2,2,	4		4,1		5		5,5		10		1,10		11
+		[1,12,3,12,3,1,3,12,3,1,3]
+12	pu	dup		add		dup		dup		dup 	add		add		mul
+	1,	1,1,	2,		2,2,	2,2,2,	2,2,2,2,4,2,2,	6,2		12
+	[1,12,3,12,12,12,3,3,5]
+13	pu	dup		add		dup		dup 	dup 	add		add		mul		push		add
+	1,	1,1,	2,		2,2,	2,2,2,	2,2,2,2,4,2,2,	6,2		12		12,1,		13
+	[1,12,3,12,12,12,3,3,5,1,3]
+14	pu	dup		add		dup		dup 	dup		add		add		pu		add		mul
+	1,	1,1,	2,		2,2,	2,2,2,	2,2,2,2,4,2,2	6,2,	1,6,2	7,2		14
+	[1,12,3,12,12,12,3,3,1,3,5]
+15	pu	dup		add		dup		add		dup		mul		pu		sub
+	1,	1,1,	2,		2,2,	4,		4,4,	16		1,16	15
+	[1,12,3,12,3,12,5,1,4]
+16  pu	dup		add		dup		add		dup		mul
+	1,	1,1,	2,		2,2,	4,		4,4,	16
+	[1,12,3,12,3,12,5]
+17	pu	dup		add		dup		add		dup		mul		pu		add
+	1,	1,1,	2,		2,2,	4,		4,4,	16		1,16	17
+	[1,12,3,12,3,12,5,1,3]	
+18	pu	dup		add		dup		push	add		dup		mul		mul
+	1	1,1,	2		2,2		1,2,2	3,2		3,3,2	9,2		18
+	[1,12,3,12,1,3,12,5,5]
+19	pu	dup		add		dup		push	add		dup		mul		mul 	pu		add
+	1	1,1,	2		2,2		1,2,2	3,2		3,3,2	9,2		18		1		19
+	[1,12,3,12,1,3,12,5,5,1,3]
+20	pu	dup		add		dup		dup		push	add		dup		mul		mul		add
+	1,	1,1,	2,		2,2,	2,2,2	1,2,2,2	3,2,2	3,3,2,2	9,2,2	18,2	20
+	[1,12,3,12,12,1,3,12,5,5,3]
+28	pu	dup		add		push	add		dup		dup		mul		mul
+	1,	1,1,	2,		1,2,	3,		3,3,	3,3,3	9,3		28
+	[1,12,3,1,3,12,12,5,5]
+36  pu	dup		add		dup		dup 	add		add		dup 	mul
+	1	1,1,	2		2,2,	2,2,2,	4,2,	6		6,6,	36	
+

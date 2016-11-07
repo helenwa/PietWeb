@@ -1,0 +1,4 @@
+Input Char array/text file
+Output piet file which prints selected text.
+Only end black 
+no double of same colour
